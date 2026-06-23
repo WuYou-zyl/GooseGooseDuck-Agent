@@ -1,0 +1,17 @@
+以下包含两类信息：`RecentTranscript` 与 `MemorySummary`。
+
+请按下面顺序工作：
+1. 先读 `RecentTranscript`，提炼本轮最关键的怀疑链和站边关系。
+2. 只有涉及具体规则时，再用 `rag_query` 检索。
+3. `MemorySummary` 只作背景补充，不要让它覆盖本轮原话。
+4. 输出必须让普通玩家一眼看懂，避免空泛套话。
+
+特别提醒：
+- 如果 RecentTranscript 里已经出现“加拿大信息”“加拿大被刀就报警/报价”这类内容，而某人恰好是主动报警/报尸/给出死亡反馈的人，可以把“该玩家可能刀了加拿大鹅”作为高优先级推断写出来，但要明确这是“推断”。
+- 如果语音原文虽然有错字，但上下文足以看出说话人想表达什么，应按最合理的会议语义理解，不要机械逐字抠。
+
+----- RecentTranscript -----
+{recent_transcript}
+
+----- MemorySummary -----
+{memory_summary}

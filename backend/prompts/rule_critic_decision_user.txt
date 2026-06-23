@@ -1,0 +1,27 @@
+请输出一个 JSON 对象，Schema 如下：
+{
+  "approved": <bool>,
+  "issues": <string[]>,
+  "correction_instructions": <string>,
+  "rule_hits": <string[]>,
+  "raw_notes": <string | null>
+}
+
+原始决策上下文（只能基于这里已出现的事实审查）：
+{original_context}
+
+当前决策输出：
+【前序发言分析】
+{prior_speech_analysis}
+
+【玩家身份推测】
+{identity_inference}
+
+【发言建议】
+{speech_suggestion}
+
+审查重点：
+- 若原文出现“加拿大 / 加拿大鹅 / 加拿大信息 / 被刀就报警或报价”等表达，必须检查输出是否正确应用对应机制。
+- 若输出把“推断”写成“确定事实”，应指出并要求降级表述。
+- 若输出遗漏了原文中最关键、最高价值的怀疑链，也可以判为不通过，并要求补上。
+- 若输出只是表达不够好懂，但规则和事实并未错，可以 `approved=true`，把可读性意见写进 `raw_notes`，不要滥用 `approved=false`。

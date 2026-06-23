@@ -1,0 +1,27 @@
+# api_key 可省略，回退读环境变量 DASHSCOPE_API_KEY
+rag_model_name: qwen-plus
+agent_model_name: qwen-plus
+embedding_model_name: text-embedding-v4
+
+rag:
+  enable_thinking: false
+  temperature: 0.7
+
+agent:
+  temperature: 0.7
+
+# 决策链路：默认开启深度思考；incremental_output 仅用于流式专用模型（run_draft_stream），
+# 非流式 run_draft / 回退 ainvoke 会自动去掉该参数，避免通义报「only support stream call」。
+decision:
+  enable_thinking: false
+  temperature: 0.7
+
+# 记忆 / 记忆修订：深度思考可选
+memory:
+  enable_thinking: false
+  temperature: 0.7
+
+# 规则判官：轻量，默认关闭 thinking
+rule_critic:
+  enable_thinking: false
+  temperature: 0.7

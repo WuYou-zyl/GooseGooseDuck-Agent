@@ -1,0 +1,5 @@
+# 若使用 Redis，请取消注释以下行
+# DB_URL: redis://localhost:6379
+# 若使用 PostgreSQL，请取消注释以下行
+# DB_URL: postgresql://postgres:postgres@localhost:5432/postgres?sslmode=disable
+DB_URL: data/short_memory.db

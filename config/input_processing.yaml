@@ -1,0 +1,37 @@
+enabled: false
+server:
+  host: 0.0.0.0
+  port: 9888
+  debug: true
+audio:
+  sample_rate: 16000
+  channels: 1
+  device_index: null
+  save_path: backend/tests/temp_audio
+  save_temp: true
+  min_silence_time: 0.8
+  max_silence_time: 1.0
+  min_segment_time: 0.5
+  max_segment_time: 15.0
+  vad_threshold: 0.3
+  vad_model: silero_vad.onnx
+  spk_model: 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k.onnx
+asr:
+  asr_dir: sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30
+  asr_model: ''
+  graph: ''
+  tokens: tokens.txt
+  encoder: encoder.int8.onnx
+  decoder: decoder.onnx
+  joiner: joiner.int8.onnx
+  provider: cpu
+models:
+  whisper_model_path: backend/models/whisper-tiny
+  ocr_model_dir: backend/models/paddle_ocr
+  compute_type: int8
+vision:
+  mode: window
+  target: 媒体播放器
+  fps_limit: 1
+game_setting:
+  seat_num: 13

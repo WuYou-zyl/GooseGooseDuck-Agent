@@ -1,0 +1,75 @@
+{
+  "name": "ggd-agent-meeting",
+  "version": "1.0.0",
+  "author": "zerosister",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:frontend && npm run build:electron",
+    "preview": "vite preview",
+    "build:frontend": "vite build",
+    "type-check": "vue-tsc --build",
+    "electron:serve": "electron .",
+    "format": "prettier --write --experimental-cli src/",
+    "start": "chcp 65001 && electron .",
+    "build:electron": "electron-builder"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.7.2",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "3.8.3",
+    "typescript": "~6.0.0",
+    "vite": "^8.0.8",
+    "vite-plugin-vue-devtools": "^8.1.1",
+    "vue-tsc": "^3.2.6"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "build": {
+    "appId": "ggd-agent-meeting",
+    "productName": "ggd-agent-meeting",
+    "extraResources": [
+      {
+        "from": "../dist/ggd-backend",
+        "to": "backend",
+        "filter": [
+          "**/*",
+          "!_internal/logs/**"
+        ]
+      }
+    ],
+    "files": [
+      "dist-frontend/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "ggd.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true
+    }
+  }
+}

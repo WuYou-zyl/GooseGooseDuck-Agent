@@ -1,0 +1,10 @@
+## 上一轮记忆摘要（MemorySummary，JSON）
+{prior_memory_summary}
+
+## 近期发言时间线（含当前条所在窗口，按顺序）
+{short_memory}
+
+## 当前待总结的一条 IngestionOutput（JSON，请重点总结本条）
+{ingestion}
+
+请根据以上上下文，输出本条的「立场/要点」正文（见系统说明）。

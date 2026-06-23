@@ -1,0 +1,22 @@
+规则判官审查 JSON：
+{critic_review_json}
+
+原始决策上下文（包含 RecentTranscript 和 MemorySummary）。修订时必须以这里的原始发言为事实依据：
+{original_context}
+
+当前待修订的三段输出：
+【前序发言分析】
+{prior_speech_analysis}
+
+【玩家身份推测】
+{identity_inference}
+
+【发言建议】
+{speech_suggestion}
+
+请重写为一个更好懂的版本，要求：
+- 先结论，后依据。
+- 语言简洁，像会议总结，不像规则审计。
+- 如果判官只是嫌它不够严谨，但原话和规则足以支持高概率怀疑，可以保留这个怀疑。
+- 如果当前输出漏掉了本轮最关键的怀疑链，要补上。
+- 最终仍然只输出三段正文，不要输出解释、标题说明或 JSON。

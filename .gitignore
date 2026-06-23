@@ -1,0 +1,12 @@
+**/__pycache__/
+*.db
+**/logs/
+.cursor/
+test_audio/
+test/
+.env
+tmp_asr/
+roi_config.json
+**/node_modules/
+frontend_input_processing/dist-frontend/
+frontend_input_processing/release/

@@ -1,0 +1,11 @@
+规则判官评审 JSON：
+{critic_review_json}
+
+当前完整记忆摘要 JSON（请只改最后一条玩家的立场表述）：
+{memory_summary_json}
+
+近期发言短窗（供对照）：
+{short_memory}
+
+当前待对照的一条发言 IngestionOutput JSON：
+{ingestion}

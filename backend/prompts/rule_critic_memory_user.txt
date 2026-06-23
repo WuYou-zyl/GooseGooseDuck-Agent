@@ -1,0 +1,16 @@
+请根据下列数据输出**一个** JSON 对象（仅此，无其他内容）：
+
+Schema：
+{
+  "approved": <布尔>,
+  "issues": <字符串数组>,
+  "correction_instructions": <字符串，若 approved 为 true 可为空>,
+  "rule_hits": <字符串数组，硬问题>,
+  "raw_notes": <字符串或 null>
+}
+
+当前记忆摘要 JSON：
+{memory_summary_json}
+
+最近一条发言 IngestionOutput JSON：
+{last_ingestion_json}

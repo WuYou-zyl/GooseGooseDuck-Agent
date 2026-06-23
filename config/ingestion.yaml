@@ -1,0 +1,15 @@
+asr:
+  model: fun-asr-realtime
+  format: pcm
+  sample_rate: 16000
+  chunk_size: 3200
+
+vision:
+  model: qwen-vl-plus
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+
+emotion:
+  granularity: per_sentence  # per_sentence | per_segment | per_time_window | disabled
+  segment_size: 3
+  time_window_seconds: 30
+  max_summary_length: 80

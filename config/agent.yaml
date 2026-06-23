@@ -1,0 +1,22 @@
+# memory_agent
+memory_agent:
+  recent_n: 13   # 短期记忆最近n条
+  # create_agent 单轮最大步数（含模型与工具节点）
+  recursion_limit: 25 #  记忆 agent 最多的调用次数
+
+decision_agent:
+  recent_ingestion_n: 80 # 发送给决策 Agent 的最近原始发言条数；<=0 表示不限制
+  # create_agent / LangGraph 单轮最大步数（含模型与工具节点），防止无限循环
+  recursion_limit: 25 #  决策 agent 最多的调用次数
+
+# 规则校对 Agent（memory 图内节点 + decision API 后置）
+rule_critic:
+  enabled: true
+  # 判官—Agent 修订循环最大次数（记忆与决策各自计数）
+  max_iterations: 3
+  memory_max_iterations: 1
+  decision_max_iterations: 1
+  recursion_limit: 25 #  规则判官 agent 最多的调用次数
+  timeout_seconds: 120
+  memory_timeout_seconds: 120
+  decision_timeout_seconds: 120

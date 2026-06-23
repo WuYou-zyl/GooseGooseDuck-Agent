@@ -1,0 +1,18 @@
+rule_library:
+  collection_name: rule_library
+  persist_directory: data/rule_library_db
+  k: 7
+  data_path: data/rule_library
+  md5_hex_store: data/rule_library_md5.txt
+  allow_knowledge_files_type: ['.txt', '.pdf', '.xlsx']
+  chunk_size: 200
+  chunk_overlap: 20
+  separators: ["\n\n", "\n", ".", "!", "?", "。", "！", "？", " ", ""]
+
+long_term_memory:
+  collection_name: long_term_memory
+  persist_directory: /data/long_term_memory_db
+  k: 5
+  chunk_size: 800
+  chunk_overlap: 80
+  separators: ["\n\n", "\n", ".", "!", "?", "。", "！", "？", " ", ""]
